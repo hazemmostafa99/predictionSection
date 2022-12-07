@@ -159,6 +159,11 @@ select {
   font-size: 15px;
   margin-top: 105px;
 }
+@media (max-width: 1200px) {
+  .predictionBottom {
+    margin-bottom: 30px;
+  }
+}
 
 .predictionRight {
   width: 55%;
@@ -208,5 +213,8 @@ select {
   justify-content: center;
   align-items: center;
   position: relative;
-  font-size: 30px;
+}
+
+.uploadedImg{
+  width: 500px;
 }

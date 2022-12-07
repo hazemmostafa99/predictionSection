@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./prediction.css";
 const Prediction = () => {
   const [file, setFile] = useState(null);
-  console.log(file);
+  const handelChange = (e) => {
+    setFile(URL.createObjectURL(e.target.files[0]));
+  };
   return (
     <div className="prediction">
       <div className="container">
@@ -35,11 +37,7 @@ const Prediction = () => {
             <span className="focus"></span>
           </div>
           <div className="inputWraper">
-            <input
-              className="file"
-              type="file"
-              onChange={(e) => setFile(e.target.files[0])}
-            />
+            <input className="file" type="file" onChange={handelChange} />
           </div>
           <button>AI Prediction</button>
 
@@ -52,6 +50,13 @@ const Prediction = () => {
         <div className="predictionRight">
           <div className="gradient-1"></div>
           <div className="gradient-2"></div>
+          <div className="imageBox">
+            {file ? (
+              <img src={file} alt="" className="uploadedImg" />
+            ) : (
+              <h3 style={{fontSize : "50px"}}>No image</h3>
+            )}
+          </div>
         </div>
       </div>
     </div>
