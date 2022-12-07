@@ -1,15 +1,27 @@
 .prediction {
-  width: 100vw;
-  height: 100vh;
+}
+.prediction .container {
   display: flex;
   overflow: hidden;
-  position: relative;
+}
+@media (max-width: 1199px) {
+  .prediction .container {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .prediction .predictionLeft {
   padding-left: 72px;
   padding-top: 28px;
-  width: 866px;
+  width: 40%;
+  margin-right: 5%;
+}
+@media (max-width: 1199px) {
+  .prediction .predictionLeft {
+    width: 100%;
+    padding-left: 20px;
+  }
 }
 
 .prediction .predictionLeft .circle {
@@ -22,9 +34,7 @@
   margin-top: 33px;
   margin-bottom: 11px;
   font-size: 25px;
-  width: 691px;
-  height: 90px;
-  line-height: 30.26px;
+  margin-bottom: 30px;
 }
 
 .prediction .predictionLeft p span {
@@ -33,16 +43,30 @@
 }
 .prediction .predictionLeft .icons {
   list-style: none;
-  width: 532px;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .predictionLeft .icons li {
   width: 71px;
   height: 68px;
   margin-right: 37px;
+}
+.predictionLeft .icons li:last-of-type {
+  margin-top: -50px;
+  margin-left: -25px;
+}
+@media (max-width: 1199px) {
+  .prediction .predictionLeft .desc {
+    width: 70%;
+    margin: 30px auto 0px;
+  }
+  .prediction .predictionLeft .icons {
+    margin: 30px auto;
+  }
 }
 
 :root {
@@ -69,8 +93,7 @@ select {
 }
 
 .select {
-  width: 100%;
-  width: 532px;
+  width: 80%;
   padding: 25px;
   font-size: 20px;
   cursor: pointer;
@@ -92,8 +115,6 @@ select {
   grid-template-areas: "select";
   align-items: center;
   position: relative;
-
-  width: 532px;
 }
 .select::after {
   grid-area: select;
@@ -104,15 +125,15 @@ select {
 }
 
 .prediction .predictionLeft button {
-  width: 532px;
   padding: 25px;
   background: #1e1e1e;
   color: white;
   border: none;
   cursor: pointer;
+  width: 80%;
 }
 .inputWraper {
-  width: 532px;
+  width: 80%;
   padding: 25px;
   background: #d9d9d9;
   margin: 35px 0;
@@ -121,6 +142,13 @@ select {
 
 .file {
   font-size: 20px;
+}
+
+@media (max-width: 1199px) {
+  .inputWraper,
+  .select {
+    margin: 30px auto;
+  }
 }
 .predictionBottom {
   height: 180px;
@@ -133,8 +161,16 @@ select {
 }
 
 .predictionRight {
-  width: 1054px;
-  height: 100%;
+  width: 55%;
+  height: 1080px;
+  position: relative;
+}
+@media (max-width: 1199px) {
+  .predictionRight {
+    width:100%;
+    height: auto;
+    text-align: center;
+  }
 }
 
 .gradient-1 {
@@ -147,8 +183,8 @@ select {
   );
   border-radius: 50%;
   position: absolute;
-  top: -25%;
-  left: 866px;
+  top: -15%;
+  left: -40px;
 }
 
 .gradient-2 {
@@ -157,8 +193,13 @@ select {
   background: linear-gradient(180deg, #0e60ff 0%, rgba(54, 255, 98, 0) 100%);
   border-radius: 50%;
   position: absolute;
-  top: -25%;
-  left: 922px;
+  top: -15%;
+}
+@media (max-width: 1200px) {
+  .gradient-1,
+  .gradient-2 {
+    display: none;
+  }
 }
 .imageBox {
   width: 100%;
